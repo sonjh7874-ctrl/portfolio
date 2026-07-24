@@ -207,6 +207,16 @@ figcaption{font-size:12.5px;color:var(--faint);margin-top:12px;line-height:1.6;f
 .next .t .ar{color:var(--faint);transition:transform .25s var(--ease);}
 .next a:hover .t .ar{transform:translateX(6px);color:var(--ink);}
 
+/* more links (notion / 발표자료) */
+.more{border-top:1px solid var(--line);padding:46px 0 0;}
+.more .more-kick{font-family:var(--mono);font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--faint);margin-bottom:16px;}
+.more-links{display:flex;gap:30px;align-items:center;flex-wrap:wrap;}
+.more-primary{font-size:15px;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:3px;display:inline-flex;gap:8px;align-items:center;}
+.more-primary .ar{transition:transform .25s var(--ease);}
+.more-primary:hover .ar{transform:translateX(4px);}
+.more-secondary{font-size:15px;color:var(--sub);display:inline-flex;gap:8px;align-items:center;transition:color .2s var(--ease);}
+.more-secondary:hover{color:var(--ink);}
+
 /* ---------- reveal animation ---------- */
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
 .reveal.in{opacity:1;transform:none;}
