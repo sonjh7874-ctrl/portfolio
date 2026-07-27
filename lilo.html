@@ -33,16 +33,16 @@
 
     <div class="factbar reveal">
       <div class="fact"><div class="lbl">Period</div><div class="val">2026.06.04–23</div></div>
-      <div class="fact"><div class="lbl">Team</div><div class="val">4인 · 중반 이후 팀 운영</div></div>
-      <div class="fact"><div class="lbl">My role</div><div class="val">데이터 분석 · 서비스 기획</div></div>
+      <div class="fact"><div class="lbl">Team</div><div class="val">4인</div></div>
+      <div class="fact"><div class="lbl">My role</div><div class="val">데이터 분석 · 서비스 기획 · 팀 운영</div></div>
       <div class="fact"><div class="lbl">Stack</div><div class="val">Python · TF-IDF · K-Means · LDA</div></div>
       <div class="fact"><div class="lbl">Result</div><div class="val">LG CX 프로젝트 우수상</div></div>
     </div>
 
-    <div class="goalbar reveal">
-      <div class="g"><div class="lbl">Mission</div><div class="val">가전 구독 고객경험 개선 <span class="tag">과제 미션</span></div></div>
-      <div class="g"><div class="lbl">Goal</div><div class="val">생활 변화 시점의 해지를 승계·전환으로 흡수하는 구독 서비스를 설계한다 <span class="tag">팀 재정의</span></div></div>
-      <div class="g"><div class="lbl">Success</div><div class="val">해지 문의 중 승계·전환 상담으로 흡수되는 비율 <span class="tag">미검증 가설</span></div></div>
+    <div class="goalflow reveal">
+      <div class="step"><div class="lbl"><span class="n">01</span>과제 미션</div><div class="val">가전 구독 고객경험 개선</div></div>
+      <div class="step key"><div class="lbl"><span class="n">02</span>팀이 정한 목표</div><div class="val">생활 변화 시점의 해지를 승계·전환으로 흡수하는 구독 서비스를 설계한다</div></div>
+      <div class="step"><div class="lbl"><span class="n">03</span>성공 기준 가설</div><div class="val">해지 문의 중 승계·전환 상담으로 흡수되는 비율 <span class="aside">(운영 후 검증)</span></div></div>
     </div>
   </div>
 </header>
@@ -50,7 +50,7 @@
 <section class="block">
   <div class="wrap">
     <div class="metrics reveal">
-      <div class="metric"><div class="big">34,561</div><div class="cap">직접 수집한 VOC · 전체의 27%</div></div>
+      <div class="metric"><div class="big">34,561</div><div class="cap">직접 수집한 VOC (전체의 27%)</div></div>
       <div class="metric"><div class="big">127,675</div><div class="cap">팀 통합 원본</div></div>
       <div class="metric"><div class="big">38,586</div><div class="cap">최종 분석 데이터</div></div>
       <div class="metric"><div class="big">6</div><div class="cap">탐색적 니즈 상태</div></div>
@@ -82,14 +82,14 @@
       <figure class="reveal"><img src="assets/img/lilo-clusters.jpg" alt="TF-IDF 상위 키워드로 정리한 6개 군집">
         <figcaption>TF-IDF 상위 키워드로 정리한 6개 니즈 상태.</figcaption></figure>
     </div>
-    <div class="note reveal"><div class="t">분석 한계</div><p>낮은 실루엣 지수를 고려해 명확한 고객 분류가 아닌 탐색적 니즈 상태로 해석했습니다. unigram TF-IDF는 문맥을 충분히 반영하지 못하며, LDA random seed를 고정하지 않아 안정성 검증이 부족합니다.</p></div>
+    <div class="note reveal"><div class="t">분석 한계</div><p>실루엣 지수가 낮아 명확한 고객 분류로 보기는 어렵다고 판단해, 탐색적 니즈 상태로 해석했습니다. unigram TF-IDF는 문맥을 충분히 반영하지 못하며, LDA random seed를 고정하지 않아 안정성 검증이 부족합니다.</p></div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
     <h2 class="reveal">핵심 발견</h2>
-    <p class="reveal">군집은 정해진 사람 유형이 아니라, 한 고객에게도 상황에 따라 동시에 나타날 수 있는 니즈 상태로 해석했습니다. KNU 감성사전으로 만족도·중요도를 정규화해 기회점수를 계산하고, 중요도는 높은데 만족도는 낮은 ‘생활 변화형’을 핵심 기회영역으로 골랐습니다.</p>
+    <p class="reveal">군집을 사람 유형으로 두면 한 고객이 여러 군집에 걸치는 경우를 설명할 수 없어, 상황마다 나타나는 니즈 상태로 해석했습니다. KNU 감성사전으로 만족도·중요도를 정규화해 기회점수를 계산하고, 중요도는 높은데 만족도는 낮은 ‘생활 변화형’을 핵심 기회영역으로 골랐습니다.</p>
     <figure class="reveal"><img src="assets/img/lilo-opportunity.jpg" alt="중요도와 만족도를 활용한 기회영역 선정">
       <figcaption>중요도는 높고 만족도는 낮은 생활 변화형 Action을 핵심 기회영역으로 선정.</figcaption></figure>
     <p class="reveal">대표 고객(합성 페르소나)의 여정에서는, 생활이 바뀔수록 ‘구독은 자유롭게 그만둘 수 있을 것’이라는 기대와 실제 계약 부담 사이의 간극이 커졌습니다.</p>
@@ -154,12 +154,12 @@
       <div class="layer">
         <div class="h">검증된 정량 성과</div>
         <p>10개 팀이 참여한 LG전자 DX스쿨 CX 프로젝트에서 <strong>우수상</strong>을 받았습니다. 우수상은 2~3위 구간에 주어지며, 심사는 LG전자 현업 실무진과 DX스쿨 운영진 2인이 맡았습니다. 구체적인 순위는 공개되지 않았습니다.</p>
-        <p>분석 자체의 규모와 엄밀성은 다음과 같습니다. VOC 34,561건을 직접 수집해 팀 전체 원본 127,675건의 약 27%를 담당했고, 결측·중복·광고·비관련 문서를 걸러 38,586건(잔존율 30.2%)을 분석 대상으로 남겼습니다. 실루엣 지수와 해석 가능성을 함께 보고 군집 수를 결정했으며, 6개 군집 중 3개의 도출과 해석을 맡았습니다.</p>
+        <p>분석 규모로 보면, VOC 34,561건을 직접 수집해 팀 전체 원본 127,675건의 약 27%를 담당했습니다. 결측·중복·광고·비관련 문서를 걸러 38,586건(잔존율 30.2%)을 분석 대상으로 남겼고, 6개 군집 중 3개의 도출과 해석을 맡았습니다.</p>
       </div>
       <div class="layer">
         <div class="h">정성 성과 — 심사 피드백</div>
         <div class="quote">
-          <p>“구독 서비스의 Pain point를 데이터 기반으로 명확히 확인”, “분석 방법 선택에 근거를 제시해 논리 확보”, “Tracker 설계로 운영 결과를 확인할 수 있는 지표 구성”</p>
+          <p>“구독 서비스의 Pain point를 데이터 기반으로 명확히 확인”<br>“분석 방법 선택에 근거를 제시해 논리 확보”<br>“Tracker 설계로 운영 결과를 확인할 수 있는 지표 구성”</p>
           <div class="src">— LG전자 책임연구원</div>
         </div>
         <div class="quote">
@@ -167,18 +167,14 @@
           <div class="src">— LG전자 이사</div>
         </div>
         <p>보완 지적은 실제 운영비용과 승계 구독료 산정 등 비즈니스 운영 관점, 고객이 중고 제품을 승계받을 때의 리스크 대응, 액터 정의의 중복 여부 점검이었습니다.</p>
-      </div>
-      <div class="layer">
-        <div class="h">정성 성과 — 프로젝트 멘토 강사 피드백</div>
-        <div class="quote">
-          <p>“실루엣 지수 최고점(k=8) 대신 해석 가능성을 고려해 k=6을 최종 선택”, “하이퍼파라미터·미니배치 선정 근거를 명확히 서술”, “서비스 제공으로 끝나지 않는 순환형 서비스 루프 완성”</p>
-          <div class="src">— 프로젝트 멘토 강사</div>
+        <div class="quote" style="margin-top:26px;">
+          <p>“실루엣 지수 최고점(k=8) 대신 해석 가능성을 고려해 k=6을 최종 선택”<br>“하이퍼파라미터·미니배치 선정 근거를 명확히 서술”<br>“서비스 제공으로 끝나지 않는 순환형 서비스 루프 완성”</p>
+          <div class="src">— 프로젝트 멘토 강사 (심사와 별개로 받은 지도 의견)</div>
         </div>
-        <p class="muted">심사 평가와 구분해 표기했습니다. 멘토 강사 피드백은 프로젝트 진행 중 받은 지도 의견입니다.</p>
       </div>
       <div class="layer">
         <div class="h">미검증 가설 KPI</div>
-        <p>고객 유지율·위약금 절감률·매출·LTV·AI 추천 수용률 등은 측정하지 않았으며, 운영 후 검증할 지표이자 가설입니다. 목표 수치는 초기 가설이며 실제 달성 결과가 아닙니다. 교육 프로젝트라 서비스 운영 성과는 존재하지 않습니다.</p>
+        <p>고객 유지율·위약금 절감률·매출·LTV·AI 추천 수용률 등은 측정하지 않았으며, 운영 후 검증할 지표이자 가설입니다. 목표 수치는 초기 가설이며 실제 달성 결과가 아닙니다. 교육 과정에서 진행한 기획이라 실제 운영 데이터는 없습니다.</p>
         <figure style="margin-top:20px;"><img src="assets/img/lilo-kpi.jpg" alt="고객가치·경영성과·DX 성과지표 체계">
           <figcaption>이탈 방지·부담 없는 전환·관계 지속을 확인하기 위한 고객가치·비즈니스·디지털 경험 지표 체계.</figcaption></figure>
       </div>
@@ -197,7 +193,7 @@
       </div>
       <div class="layer">
         <div class="h">아쉬운 점</div>
-        <p>채널·키워드별 수집 건수와 전처리 후 잔존 건수를 기록하지 않아, 표본이 한쪽으로 치우쳤는지 판단하기 어려웠습니다. 군집 결과를 원문 샘플로 검수·라벨링해 확인하는 절차도 없었고, LDA random seed를 고정하지 않아 재현성 검증이 부족했습니다. unigram TF-IDF만 사용해 문맥과 어순이 반영되지 않은 점도 한계였습니다.</p>
+        <p>채널·키워드별 수집 건수와 전처리 후 잔존 건수를 기록하지 않아, 표본이 한쪽으로 치우쳤는지 판단할 근거가 없었습니다. 군집 결과를 원문 샘플로 검수해 확인하는 절차도 두지 않았고, seed를 고정하지 않아 같은 결과를 다시 얻을 수 있는지 확인하지 못했습니다.</p>
         <p>솔루션을 확정한 뒤에 비즈니스 관점을 붙이다 보니, 운영비용과 승계 구독료 산정 같은 수익 구조가 끝까지 구체화되지 않았습니다.</p>
       </div>
       <div class="layer">
