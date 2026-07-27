@@ -192,13 +192,15 @@ figcaption{font-size:12.5px;color:var(--faint);margin-top:12px;line-height:1.6;f
 .note p{font-size:13.5px;color:var(--sub);line-height:1.75;margin:0;}
 
 
-/* goal block */
-.goalbar{margin-top:18px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card);max-width:760px;}
-.goalbar .g{display:grid;grid-template-columns:92px 1fr;gap:18px;padding:16px 22px;border-top:1px solid var(--line);}
-.goalbar .g:first-child{border-top:none;}
-.goalbar .g .lbl{font-family:var(--mono);font-size:10px;letter-spacing:1px;color:var(--faint);text-transform:uppercase;padding-top:4px;}
-.goalbar .g .val{font-size:14.5px;line-height:1.7;color:var(--ink-soft);}
-.goalbar .g .val .tag{font-family:var(--mono);font-size:10.5px;color:var(--faint);margin-left:8px;letter-spacing:.5px;}
+/* goal flow */
+.goalflow{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:14px;}
+.goalflow .step{background:var(--card);padding:22px 22px 26px;position:relative;}
+.goalflow .step .lbl{font-family:var(--mono);font-size:10px;letter-spacing:1px;color:var(--faint);text-transform:uppercase;margin-bottom:11px;}
+.goalflow .step .lbl .n{margin-right:9px;}
+.goalflow .step .val{font-size:14.5px;line-height:1.7;color:var(--ink-soft);}
+.goalflow .step.key .val{color:var(--ink);font-weight:500;}
+.goalflow .step .val .aside{color:var(--faint);}
+.goalflow .step + .step::before{content:'\2192';position:absolute;left:-10px;top:22px;width:20px;height:20px;border-radius:50%;background:var(--card);color:var(--faint);font-size:11px;line-height:20px;text-align:center;z-index:2;}
 
 /* layered outcome / retrospective */
 .layers{max-width:760px;margin-top:8px;}
@@ -261,7 +263,8 @@ figcaption{font-size:12.5px;color:var(--faint);margin-top:12px;line-height:1.6;f
   .work-item:hover{padding-left:4px;}
   .fig-2{grid-template-columns:1fr;}
   .contrib .grp{grid-template-columns:1fr;gap:8px;}
-  .goalbar .g{grid-template-columns:1fr;gap:6px;}
+  .goalflow{grid-template-columns:1fr;}
+  .goalflow .step + .step::before{content:'\2193';left:22px;top:-10px;}
   .nav ul{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;
     background:var(--paper);border-bottom:1px solid var(--line);padding:8px 0;}
   .nav ul.open{display:flex;}
@@ -269,5 +272,5 @@ figcaption{font-size:12.5px;color:var(--faint);margin-top:12px;line-height:1.6;f
   .nav ul a{display:block;padding:14px 0;font-size:14px;border-bottom:1px solid var(--line);}
   .nav ul li:last-child a{border-bottom:0;}
   .nav .menu-btn{display:block;}
-  .block p,.lead-q,.block ul,.note,.contrib,.goalbar,.layers,.quote{max-width:none;}
+  .block p,.lead-q,.block ul,.note,.contrib,.layers,.quote{max-width:none;}
 }
