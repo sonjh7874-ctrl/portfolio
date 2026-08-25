@@ -40,9 +40,9 @@
     </div>
 
     <div class="goalflow reveal">
-      <div class="step"><div class="lbl"><span class="n">01</span>과제 미션</div><div class="val">가전 구독 고객경험 개선</div></div>
-      <div class="step key"><div class="lbl"><span class="n">02</span>팀이 정한 목표</div><div class="val">생활 변화 시점의 해지를 승계·전환으로 흡수하는 구독 서비스를 설계한다</div></div>
-      <div class="step"><div class="lbl"><span class="n">03</span>성공 기준 가설</div><div class="val">해지 문의 중 승계·전환 상담으로 흡수되는 비율 <span class="aside">(운영 후 검증)</span></div></div>
+      <div class="step"><div class="lbl"><span class="n">01</span>문제</div><div class="val">가전 구독 해지는 이사 같은 생활 변화가 가장 크게 좌우했고, 20~30대에서 이동률이 가장 높았다</div></div>
+      <div class="step key"><div class="lbl"><span class="n">02</span>해결</div><div class="val">‘다음 사용자에게 넘기는’ 행동을 LG 공식 승계로 흡수하는 순환형 구독 플랫폼 LILO 설계 — AI 매칭 · ThinQ 상태 인증</div></div>
+      <div class="step"><div class="lbl"><span class="n">03</span>기대효과</div><div class="val">해지 문의 중 승계·전환으로 흡수되는 비율을 높여 생활 변화로 인한 이탈 완화 <span class="aside">(운영 후 검증)</span></div></div>
     </div>
   </div>
 </header>
@@ -60,8 +60,8 @@
 
 <section class="block">
   <div class="wrap">
-    <h2 class="reveal">구독에 익숙한 고객이 왜 가전 구독은 지속하기 어려울까?</h2>
-    <p class="reveal">한국소비자원 조사에서 가전 구독·렌탈 경험자의 48.2%는 “원할 때 자유롭게 해지할 수 있는 서비스”에 가깝다고 인식했습니다. 계약 불만의 65.7%는 해지·위약금에 집중됐습니다. 20~30대 이동률(24.3%·20.4%)은 다른 연령대보다 높았습니다. 문제 탐색용 VOC 9,958건에서도 장기약정과 위약금, 이사와 이전설치가 반복됐습니다.</p>
+    <h2 class="reveal">가전 구독 해지, 가장 큰 변수는 생활 변화였다</h2>
+    <p class="reveal">한국소비자원 조사에서 계약 불만의 65.7%가 해지·위약금에 집중됐고, 문제 탐색용 VOC 9,958건에서도 장기약정·위약금과 함께 이사·이전설치가 반복적으로 언급됐습니다. 20~30대 이동률(24.3%·20.4%)이 다른 연령대보다 높아, 생활 변화를 가장 자주 겪는 이 계층이 해지에도 가장 크게 영향받고 있었습니다.</p>
     <p class="lead-q reveal">생활 변화가 구독 해지로 이어지지 않고 적합한 제품으로 갈아타는 전환이 되려면 무엇이 필요할까?</p>
     <figure class="reveal"><img src="assets/img/lilo-problem.jpg" alt="연령별 이동률과 가전 구독 이탈 키워드">
       <figcaption>연령별 이동률과 문제 탐색용 VOC의 주요 키워드. 이사나 결혼처럼 생활이 바뀔 때 기존 제품과 계약을 조정할 선택지가 부족하다는 문제로 정의했습니다.</figcaption></figure>
@@ -70,26 +70,8 @@
 
 <section class="block">
   <div class="wrap">
-    <h2 class="reveal">데이터 전략과 분석</h2>
-    <p class="reveal">팀 통합 원본은 127,675건이고 그중 34,561건은 직접 수집한 것입니다. 여기서 결측과 중복, 광고와 비관련 문서를 단계적으로 걸러 38,586건(잔존율 약 30.2%)을 분석 대상으로 남겼습니다.</p>
-    <figure class="reveal"><img src="assets/img/lilo-preprocess.jpg" alt="127,675건을 38,586건으로 정제한 전처리 과정">
-      <figcaption>원본 127,675건 → 최종 분석 38,586건. 라이프스타일·니즈 신호가 담긴 문장만 남겼습니다.</figcaption></figure>
-    <h3 class="reveal">방법 선택과 군집 수 결정</h3>
-    <p class="reveal">짧은 댓글과 질문에서 핵심 단어를 바로 확인하려고 TF-IDF를 썼고, 3만 건이 넘는 희소 텍스트를 제한된 기간에 다루려고 MiniBatch K-Means를 골랐습니다. 실루엣 최고점은 k=8(0.0468)이었지만 군집이 지나치게 잘게 쪼개졌습니다. 통계 점수와 해석 가능성을 함께 보고 k=6을 선택했습니다.</p>
-    <div class="fig-2">
-      <figure class="reveal"><img src="assets/img/lilo-method.jpg" alt="TF-IDF와 MiniBatch K-Means 선택 및 실루엣 기반 군집 수 결정">
-        <figcaption>실루엣 지수와 해석 가능성을 함께 고려한 k 선택.</figcaption></figure>
-      <figure class="reveal"><img src="assets/img/lilo-clusters.jpg" alt="TF-IDF 상위 키워드로 정리한 6개 군집">
-        <figcaption>TF-IDF 상위 키워드로 정리한 6개 니즈 상태.</figcaption></figure>
-    </div>
-    <div class="note reveal"><div class="t">분석 한계</div><p>실루엣 지수가 낮아 명확한 고객 분류로 보기는 어렵다고 판단해 탐색적 니즈 상태로 해석했습니다. unigram TF-IDF는 문맥을 충분히 반영하지 못합니다. LDA random seed를 고정하지 않아 안정성 검증이 부족합니다.</p></div>
-  </div>
-</section>
-
-<section class="block">
-  <div class="wrap">
-    <h2 class="reveal">핵심 발견</h2>
-    <p class="reveal">군집을 사람 유형으로 두면 한 고객이 여러 군집에 걸치는 경우를 설명할 수 없어 상황마다 나타나는 니즈 상태로 해석했습니다. KNU 감성사전으로 만족도와 중요도를 정규화해 기회점수를 계산했고, 중요도는 높은데 만족도는 낮은 ‘생활 변화형’을 핵심 기회영역으로 골랐습니다.</p>
+    <h2 class="reveal">핵심 발견 — 원하는 건 낮은 가격이 아니라 손해 안 보고 갈아타는 방법</h2>
+    <p class="reveal">VOC를 니즈 상태 6개로 나눠본 결과, 만족도는 낮은데 중요도는 높은 ‘생활 변화형’이 가장 시급한 기회영역으로 나타났습니다. 한 고객이 여러 상황을 오갈 수 있다고 보고, 고정된 고객 유형이 아니라 상황별 니즈로 해석한 결과입니다.</p>
     <figure class="reveal"><img src="assets/img/lilo-opportunity.jpg" alt="중요도와 만족도를 활용한 기회영역 선정">
       <figcaption>중요도는 높고 만족도는 낮은 생활 변화형 Action을 핵심 기회영역으로 선정.</figcaption></figure>
     <p class="reveal">대표 고객(합성 페르소나)의 여정에서는 생활이 바뀔수록 ‘구독은 자유롭게 그만둘 수 있을 것’이라는 기대와 실제 계약 부담 사이의 간극이 커졌습니다.</p>
@@ -202,6 +184,24 @@
         <p class="muted">전처리와 군집화 구현에는 AI 코딩 도구의 도움을 받았습니다. 방법 선택과 결과 해석은 직접 판단했지만 각 전처리 단계의 원리를 스스로 설명할 수 있는 수준까지 익히는 것이 남은 과제입니다.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="kick reveal" style="margin-bottom:20px;">Appendix — 분석 방법론</div>
+    <p class="reveal">팀 통합 원본은 127,675건이고 그중 34,561건은 직접 수집한 것입니다. 여기서 결측과 중복, 광고와 비관련 문서를 단계적으로 걸러 38,586건(잔존율 약 30.2%)을 분석 대상으로 남겼습니다.</p>
+    <figure class="reveal"><img src="assets/img/lilo-preprocess.jpg" alt="127,675건을 38,586건으로 정제한 전처리 과정">
+      <figcaption>원본 127,675건 → 최종 분석 38,586건. 라이프스타일·니즈 신호가 담긴 문장만 남겼습니다.</figcaption></figure>
+    <h3 class="reveal">방법 선택과 군집 수 결정</h3>
+    <p class="reveal">짧은 댓글과 질문에서 핵심 단어를 바로 확인하려고 TF-IDF를 썼고, 3만 건이 넘는 희소 텍스트를 제한된 기간에 다루려고 MiniBatch K-Means를 골랐습니다. 실루엣 최고점은 k=8(0.0468)이었지만 군집이 지나치게 잘게 쪼개졌습니다. 통계 점수와 해석 가능성을 함께 보고 k=6을 선택했습니다.</p>
+    <div class="fig-2">
+      <figure class="reveal"><img src="assets/img/lilo-method.jpg" alt="TF-IDF와 MiniBatch K-Means 선택 및 실루엣 기반 군집 수 결정">
+        <figcaption>실루엣 지수와 해석 가능성을 함께 고려한 k 선택.</figcaption></figure>
+      <figure class="reveal"><img src="assets/img/lilo-clusters.jpg" alt="TF-IDF 상위 키워드로 정리한 6개 군집">
+        <figcaption>TF-IDF 상위 키워드로 정리한 6개 니즈 상태.</figcaption></figure>
+    </div>
+    <div class="note reveal"><div class="t">분석 한계</div><p>실루엣 지수가 낮아 명확한 고객 분류로 보기는 어렵다고 판단해 탐색적 니즈 상태로 해석했습니다. unigram TF-IDF는 문맥을 충분히 반영하지 못합니다. LDA random seed를 고정하지 않아 안정성 검증이 부족합니다.</p></div>
   </div>
 </section>
 
